@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image Change</title>
+
+    <script>
+        let images = ["AHWN5000.JPG", "me.jpg", "AMKA7620.JPG"];
+        let index = 0;
+
+        function next() {
+            index++;
+            if (index >= images.length) {
+                index = 0;
+            }
+            document.getElementById("im").src = images[index];
+        }
+
+        function prev() {
+            index--;
+            if (index < 0) {
+                index = images.length - 1;
+            }
+            document.getElementById("im").src = images[index];
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <img src="AHWN5000.JPG" width="400px" height="600px" id="im"><br>
+
+    <button onclick="prev()">Previous</button>
+    <button onclick="next()">Next</button>
+
+</body>
+</html>
