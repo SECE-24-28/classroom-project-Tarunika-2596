@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(){
+            let item = document.getElementById("i/p").value;
+            let list = document.getElementById("list");
+
+            if(item.trim() !== ""){
+                let li = document.createElement("li");   
+                li.textContent = item;                  
+                list.appendChild(li);                   
+            }
+
+            document.getElementById("i/p").value = ""; 
+        }
+    </script>
+</head>
+<body>
+
+    <input type="text" id="i/p" placeholder="Enter Item">
+    <button onclick="add()">Add</button>
+    <ol id="list"></ol>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+    <script>
+        function addTask(){
+            let ip = document.getElementById("taskInput").value; 
+            let list = document.getElementById("task");
+
+            if(ip.trim() !== ""){
+                let li = document.createElement("li");
+                li.textContent = ip;
+
+                li.addEventListener("click", function() {
+                    li.classList.toggle("done");
+                });
+
+                list.appendChild(li);
+            }
+
+            document.getElementById("taskInput").value = ""; 
+        }
+    </script>
+</head>
+<body>
+    <h1>Simple To Do App</h1>
+
+    <input type="text" id="taskInput" placeholder="Enter a task">  
+    <button onclick="addTask()">Add Task</button>
+    <ul id="task"></ul>
+    
+    
+    
+</body>
+</html>
